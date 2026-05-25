@@ -1,0 +1,234 @@
+{
+  "kit": "adpages-pipedrive-lead-attribution-kit",
+  "kitVersion": "0.1.0",
+  "platform": "pipedrive",
+  "manualSetupOnly": true,
+  "requiresPipedriveApi": false,
+  "requiresOAuth": false,
+  "requiresSecrets": false,
+  "writesDataAutomatically": false,
+  "targetObjects": [
+    "lead",
+    "deal",
+    "person",
+    "organization"
+  ],
+  "fieldNote": "Pipedrive custom field keys are generated per account. Replace manual_* placeholder keys only after manual field setup.",
+  "fields": [
+    {
+      "sourceKey": "lead_title",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "Lead Title",
+      "plannedFieldKey": "native_lead_title",
+      "type": "identity",
+      "sourcePath": "lead.title",
+      "required": true,
+      "purpose": "Create a readable title for the lead inbox."
+    },
+    {
+      "sourceKey": "person_name",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Person Name",
+      "plannedFieldKey": "native_person_name",
+      "type": "identity",
+      "sourcePath": "contact.name",
+      "required": true,
+      "purpose": "Identify the lead contact."
+    },
+    {
+      "sourceKey": "person_phone",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Phone",
+      "plannedFieldKey": "native_person_phone",
+      "type": "identity",
+      "sourcePath": "contact.phone",
+      "required": true,
+      "purpose": "Enable prompt sales follow-up."
+    },
+    {
+      "sourceKey": "person_email",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Email",
+      "plannedFieldKey": "native_person_email",
+      "type": "identity",
+      "sourcePath": "contact.email",
+      "required": false,
+      "purpose": "Support non-phone follow-up."
+    },
+    {
+      "sourceKey": "organization_name",
+      "targetObject": "organization",
+      "pipedriveFieldLabel": "Organization Name",
+      "plannedFieldKey": "native_organization_name",
+      "type": "identity",
+      "sourcePath": "contact.organization",
+      "fallback": "Residential enquiry",
+      "required": false,
+      "purpose": "Attach a business or household label when useful."
+    },
+    {
+      "sourceKey": "service_requested",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Service Requested",
+      "plannedFieldKey": "manual_service_requested",
+      "type": "qualification",
+      "sourcePath": "lead.service",
+      "required": true,
+      "purpose": "Show the service intent on the deal."
+    },
+    {
+      "sourceKey": "service_area",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Service Area",
+      "plannedFieldKey": "manual_service_area",
+      "type": "qualification",
+      "sourcePath": "lead.location",
+      "required": true,
+      "purpose": "Confirm whether the lead is in the served area."
+    },
+    {
+      "sourceKey": "urgency",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Urgency",
+      "plannedFieldKey": "manual_urgency",
+      "type": "qualification",
+      "sourcePath": "lead.urgency",
+      "fallback": "unknown",
+      "required": false,
+      "purpose": "Guide response speed and routing."
+    },
+    {
+      "sourceKey": "estimated_value",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Estimated Value",
+      "plannedFieldKey": "native_deal_value",
+      "type": "qualification",
+      "sourcePath": "lead.estimatedValue",
+      "fallback": "0",
+      "required": false,
+      "purpose": "Provide an early value estimate for reporting."
+    },
+    {
+      "sourceKey": "utm_source",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Source",
+      "plannedFieldKey": "manual_utm_source",
+      "type": "attribution",
+      "sourcePath": "derived.utm_source",
+      "fallback": "direct",
+      "required": true,
+      "purpose": "Identify the campaign source."
+    },
+    {
+      "sourceKey": "utm_medium",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Medium",
+      "plannedFieldKey": "manual_utm_medium",
+      "type": "attribution",
+      "sourcePath": "derived.utm_medium",
+      "fallback": "none",
+      "required": true,
+      "purpose": "Identify the channel medium."
+    },
+    {
+      "sourceKey": "utm_campaign",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Campaign",
+      "plannedFieldKey": "manual_utm_campaign",
+      "type": "attribution",
+      "sourcePath": "derived.utm_campaign",
+      "required": false,
+      "purpose": "Attribute the lead to the campaign."
+    },
+    {
+      "sourceKey": "utm_term",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Term",
+      "plannedFieldKey": "manual_utm_term",
+      "type": "attribution",
+      "sourcePath": "derived.utm_term",
+      "required": false,
+      "purpose": "Carry keyword or audience intent."
+    },
+    {
+      "sourceKey": "utm_content",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Content",
+      "plannedFieldKey": "manual_utm_content",
+      "type": "attribution",
+      "sourcePath": "derived.utm_content",
+      "required": false,
+      "purpose": "Differentiate creative or call-to-action variants."
+    },
+    {
+      "sourceKey": "landing_page_url",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Landing Page URL",
+      "plannedFieldKey": "manual_landing_page_url",
+      "type": "attribution",
+      "sourcePath": "derived.landing_page_url",
+      "required": true,
+      "purpose": "Show the source landing page that produced the lead."
+    },
+    {
+      "sourceKey": "referrer_url",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Referrer URL",
+      "plannedFieldKey": "manual_referrer_url",
+      "type": "attribution",
+      "sourcePath": "derived.referrer_url",
+      "required": false,
+      "purpose": "Preserve the previous page where available."
+    },
+    {
+      "sourceKey": "click_id",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Click ID",
+      "plannedFieldKey": "manual_click_id",
+      "type": "attribution",
+      "sourcePath": "derived.click_id",
+      "required": false,
+      "purpose": "Carry ad click identifiers for manual reconciliation."
+    },
+    {
+      "sourceKey": "source_summary",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Source Summary",
+      "plannedFieldKey": "manual_source_summary",
+      "type": "review",
+      "sourcePath": "derived.source_summary",
+      "required": false,
+      "purpose": "Give sales a compact campaign summary."
+    },
+    {
+      "sourceKey": "lead_quality_score",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Lead Quality Score",
+      "plannedFieldKey": "manual_lead_quality_score",
+      "type": "review",
+      "sourcePath": "derived.lead_quality_score",
+      "required": false,
+      "purpose": "Provide a planning score for human review."
+    },
+    {
+      "sourceKey": "lead_quality_notes",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Lead Quality Notes",
+      "plannedFieldKey": "manual_lead_quality_notes",
+      "type": "review",
+      "sourcePath": "derived.lead_quality_notes",
+      "required": false,
+      "purpose": "Explain the lead-quality judgement."
+    },
+    {
+      "sourceKey": "next_review_action",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Next Review Action",
+      "plannedFieldKey": "manual_next_review_action",
+      "type": "review",
+      "sourcePath": "derived.next_review_action",
+      "required": false,
+      "purpose": "Give the owner a recommended next manual action."
+    }
+  ]
+}

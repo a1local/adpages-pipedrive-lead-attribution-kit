@@ -1,0 +1,297 @@
+{
+  "kit": "adpages-pipedrive-lead-attribution-kit",
+  "version": "0.1.0",
+  "platform": "pipedrive",
+  "manualUseOnly": true,
+  "disclaimer": "Local preview only. This kit does not call Pipedrive, create leads, or write deal data.",
+  "client": "Perth Plumbing Co",
+  "formName": "Emergency Plumbing Landing Page",
+  "leadTitle": "Emergency plumber enquiry - Subiaco",
+  "targetPipeline": "Local Service Leads",
+  "targetStage": "New web lead",
+  "suggestedOwner": "Intake team",
+  "mappedFields": [
+    {
+      "sourceKey": "lead_title",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "Lead Title",
+      "plannedFieldKey": "native_lead_title",
+      "type": "identity",
+      "value": "Emergency plumber enquiry - Subiaco",
+      "required": true,
+      "purpose": "Create a readable title for the lead inbox."
+    },
+    {
+      "sourceKey": "person_name",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Person Name",
+      "plannedFieldKey": "native_person_name",
+      "type": "identity",
+      "value": "Sam Example",
+      "required": true,
+      "purpose": "Identify the lead contact."
+    },
+    {
+      "sourceKey": "person_phone",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Phone",
+      "plannedFieldKey": "native_person_phone",
+      "type": "identity",
+      "value": "+61 400 000 123",
+      "required": true,
+      "purpose": "Enable prompt sales follow-up."
+    },
+    {
+      "sourceKey": "person_email",
+      "targetObject": "person",
+      "pipedriveFieldLabel": "Email",
+      "plannedFieldKey": "native_person_email",
+      "type": "identity",
+      "value": "sam@example.test",
+      "required": false,
+      "purpose": "Support non-phone follow-up."
+    },
+    {
+      "sourceKey": "organization_name",
+      "targetObject": "organization",
+      "pipedriveFieldLabel": "Organization Name",
+      "plannedFieldKey": "native_organization_name",
+      "type": "identity",
+      "value": "Example Household",
+      "required": false,
+      "purpose": "Attach a business or household label when useful."
+    },
+    {
+      "sourceKey": "service_requested",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Service Requested",
+      "plannedFieldKey": "manual_service_requested",
+      "type": "qualification",
+      "value": "Blocked drain",
+      "required": true,
+      "purpose": "Show the service intent on the deal."
+    },
+    {
+      "sourceKey": "service_area",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Service Area",
+      "plannedFieldKey": "manual_service_area",
+      "type": "qualification",
+      "value": "Subiaco WA",
+      "required": true,
+      "purpose": "Confirm whether the lead is in the served area."
+    },
+    {
+      "sourceKey": "urgency",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Urgency",
+      "plannedFieldKey": "manual_urgency",
+      "type": "qualification",
+      "value": "same_day",
+      "required": false,
+      "purpose": "Guide response speed and routing."
+    },
+    {
+      "sourceKey": "estimated_value",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "Estimated Value",
+      "plannedFieldKey": "native_deal_value",
+      "type": "qualification",
+      "value": "650",
+      "required": false,
+      "purpose": "Provide an early value estimate for reporting."
+    },
+    {
+      "sourceKey": "utm_source",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Source",
+      "plannedFieldKey": "manual_utm_source",
+      "type": "attribution",
+      "value": "google",
+      "required": true,
+      "purpose": "Identify the campaign source."
+    },
+    {
+      "sourceKey": "utm_medium",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Medium",
+      "plannedFieldKey": "manual_utm_medium",
+      "type": "attribution",
+      "value": "cpc",
+      "required": true,
+      "purpose": "Identify the channel medium."
+    },
+    {
+      "sourceKey": "utm_campaign",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Campaign",
+      "plannedFieldKey": "manual_utm_campaign",
+      "type": "attribution",
+      "value": "emergency-plumber-perth",
+      "required": false,
+      "purpose": "Attribute the lead to the campaign."
+    },
+    {
+      "sourceKey": "utm_term",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Term",
+      "plannedFieldKey": "manual_utm_term",
+      "type": "attribution",
+      "value": "blocked drain",
+      "required": false,
+      "purpose": "Carry keyword or audience intent."
+    },
+    {
+      "sourceKey": "utm_content",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages UTM Content",
+      "plannedFieldKey": "manual_utm_content",
+      "type": "attribution",
+      "value": "call-ad",
+      "required": false,
+      "purpose": "Differentiate creative or call-to-action variants."
+    },
+    {
+      "sourceKey": "landing_page_url",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Landing Page URL",
+      "plannedFieldKey": "manual_landing_page_url",
+      "type": "attribution",
+      "value": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123",
+      "required": true,
+      "purpose": "Show the source landing page that produced the lead."
+    },
+    {
+      "sourceKey": "referrer_url",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Referrer URL",
+      "plannedFieldKey": "manual_referrer_url",
+      "type": "attribution",
+      "value": "https://www.google.com/",
+      "required": false,
+      "purpose": "Preserve the previous page where available."
+    },
+    {
+      "sourceKey": "click_id",
+      "targetObject": "lead",
+      "pipedriveFieldLabel": "AdPages Click ID",
+      "plannedFieldKey": "manual_click_id",
+      "type": "attribution",
+      "value": "test-gclid-123",
+      "required": false,
+      "purpose": "Carry ad click identifiers for manual reconciliation."
+    },
+    {
+      "sourceKey": "source_summary",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Source Summary",
+      "plannedFieldKey": "manual_source_summary",
+      "type": "review",
+      "value": "google / cpc / emergency-plumber-perth",
+      "required": false,
+      "purpose": "Give sales a compact campaign summary."
+    },
+    {
+      "sourceKey": "lead_quality_score",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Lead Quality Score",
+      "plannedFieldKey": "manual_lead_quality_score",
+      "type": "review",
+      "value": "86",
+      "required": false,
+      "purpose": "Provide a planning score for human review."
+    },
+    {
+      "sourceKey": "lead_quality_notes",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Lead Quality Notes",
+      "plannedFieldKey": "manual_lead_quality_notes",
+      "type": "review",
+      "value": "Strong local-service lead: same-day urgency, phone supplied, service supplied, campaign source present.",
+      "required": false,
+      "purpose": "Explain the lead-quality judgement."
+    },
+    {
+      "sourceKey": "next_review_action",
+      "targetObject": "deal",
+      "pipedriveFieldLabel": "AdPages Next Review Action",
+      "plannedFieldKey": "manual_next_review_action",
+      "type": "review",
+      "value": "Call within 5 minutes, confirm service area, and mark campaign values verified.",
+      "required": false,
+      "purpose": "Give the owner a recommended next manual action."
+    }
+  ],
+  "fieldValues": {
+    "native_lead_title": "Emergency plumber enquiry - Subiaco",
+    "native_person_name": "Sam Example",
+    "native_person_phone": "+61 400 000 123",
+    "native_person_email": "sam@example.test",
+    "native_organization_name": "Example Household",
+    "manual_service_requested": "Blocked drain",
+    "manual_service_area": "Subiaco WA",
+    "manual_urgency": "same_day",
+    "native_deal_value": "650",
+    "manual_utm_source": "google",
+    "manual_utm_medium": "cpc",
+    "manual_utm_campaign": "emergency-plumber-perth",
+    "manual_utm_term": "blocked drain",
+    "manual_utm_content": "call-ad",
+    "manual_landing_page_url": "https://perthplumbing.example/emergency-plumber?utm_source=google&utm_medium=cpc&utm_campaign=emergency-plumber-perth&utm_term=blocked%20drain&utm_content=call-ad&gclid=test-gclid-123",
+    "manual_referrer_url": "https://www.google.com/",
+    "manual_click_id": "test-gclid-123",
+    "manual_source_summary": "google / cpc / emergency-plumber-perth",
+    "manual_lead_quality_score": "86",
+    "manual_lead_quality_notes": "Strong local-service lead: same-day urgency, phone supplied, service supplied, campaign source present.",
+    "manual_next_review_action": "Call within 5 minutes, confirm service area, and mark campaign values verified."
+  },
+  "leadQuality": {
+    "score": "86",
+    "rating": "strong",
+    "notes": "Strong local-service lead: same-day urgency, phone supplied, service supplied, campaign source present.",
+    "requiresHumanReview": true
+  },
+  "qualityChecklist": [
+    {
+      "check": "Contact path",
+      "status": "pass",
+      "note": "Phone or email supplied."
+    },
+    {
+      "check": "Campaign attribution",
+      "status": "pass",
+      "note": "UTM source, medium, and campaign are present."
+    },
+    {
+      "check": "Landing page context",
+      "status": "pass",
+      "note": "Landing-page URL is present and uses HTTPS."
+    },
+    {
+      "check": "Service fit",
+      "status": "pass",
+      "note": "Service and location are present."
+    },
+    {
+      "check": "Urgency",
+      "status": "pass",
+      "note": "Lead indicates urgent or same-day intent."
+    },
+    {
+      "check": "Estimated value",
+      "status": "review",
+      "note": "Estimated value supplied; confirm before pipeline reporting."
+    },
+    {
+      "check": "Human QA",
+      "status": "review",
+      "note": "Review mapped fields inside Pipedrive before using automation."
+    }
+  ],
+  "missingRequired": [],
+  "reviewSteps": [
+    "Create or update Pipedrive custom fields manually using docs/setup-checklist.md.",
+    "Create a test lead/deal from the source form and compare each mapped value against this preview.",
+    "Review lead-quality checklist before automating routing, owner assignment, or follow-up."
+  ]
+}
